@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 
-function App() {
+import List from "./components/List";
+import Menu from "./components/Menu";
+import Logo from "./components/Logo";
+
+import Container from "./components/UI/Container";
+import Header from "./components/UI/Header";
+import { DataContext } from "./context/DataContext";
+
+const App = () => {
+  const {
+    data: { data },
+    favorites,
+  } = React.useContext(DataContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Container>
+        <Header>
+          <Logo />
+          <Menu />
+        </Header>
+        <Routes>
+          <Route path="/" element={<List data={data} />} />
+          <Route path="/favorites" element={<List data={favorites} />} />
+        </Routes>
+      </Container>
     </div>
   );
-}
+};
 
 export default App;

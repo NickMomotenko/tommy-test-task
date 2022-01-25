@@ -1,13 +1,15 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import "./Logo.scss";
 
 const Logo = () => {
   return (
     <div className="logo">
-      <a href="#" className="logo__link">
+      <Link to="/" className="logo__link">
         Stock List App
-      </a>
+      </Link>
     </div>
   );
 };

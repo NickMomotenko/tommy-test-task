@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-
-import classNames from "classnames";
+import React from "react";
 
 import { NavLink } from "react-router-dom";
 
@@ -12,12 +10,6 @@ const list = [
 ];
 
 const Menu = () => {
-  const [active, setActive] = useState(list[0]);
-
-  const changeActive = (id) => {
-    setActive(list?.find((item) => item.id === id));
-  };
-
   return (
     <nav className="menu">
       <ul className="menu__list">
@@ -28,7 +20,6 @@ const Menu = () => {
               className={({ isActive }) =>
                 isActive ? "menu__link--active" : "menu__link"
               }
-              onClick={() => changeActive(id)}
             >
               {name}
             </NavLink>

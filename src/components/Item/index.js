@@ -1,6 +1,4 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
-import { DataContext } from "../../context/DataContext";
 
 import Button from "../UI/Button";
 

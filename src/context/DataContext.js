@@ -16,7 +16,7 @@ export const DataProvider = ({ children }) => {
     if (data.length === 0) {
       fetchedData();
     }
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));

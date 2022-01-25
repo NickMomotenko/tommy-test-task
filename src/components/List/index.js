@@ -1,5 +1,7 @@
 import React from "react";
+
 import { useLocation } from "../../hooks/useLocation";
+
 import { DataContext } from "../../context/DataContext";
 
 import Item from "../Item";
